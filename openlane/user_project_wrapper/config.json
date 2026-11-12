@@ -49,7 +49,7 @@
                 "dir::../../ip/CF_ROM_SYNC/layout/gds/CF_ROM_SYNC.gds"
             ],
             "lef": [
-                "dir::CF_ROM_SYNC.lef"
+                "dir::../../ip/CF_ROM_SYNC/layout/lef/CF_ROM_SYNC.lef"
             ],
             "instances": {
                 "u_cf_rom_sync": {
