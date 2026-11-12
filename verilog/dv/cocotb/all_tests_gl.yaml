@@ -1,0 +1,11 @@
+# Gate-level rom_ctrl plus the programmed ROM model.
+# The abstract leaf has no image, so GL still compiles build/CF_ROM_SYNC_sim.v.
+# SPDX-License-Identifier: Apache-2.0
+Tests:
+  - {name: rom_smoke, sim: GL}
+  - {name: rom_cpu_flush, sim: GL}
+  - {name: rom_serial_stream, sim: GL}
+  - {name: rom_serial_trigger, sim: GL}
+  - {name: rom_spi_slave, sim: GL}
+  - {name: rom_flush_regs, sim: GL}
+  - {name: rom_boot_table, sim: GL}

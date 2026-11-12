@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+includes:
+  - rom_smoke/rom_smoke.yaml
+  - rom_cpu_flush/rom_cpu_flush.yaml
+  - rom_serial_stream/rom_serial_stream.yaml
+  - rom_serial_trigger/rom_serial_trigger.yaml
+  - rom_spi_slave/rom_spi_slave.yaml
+  - rom_flush_regs/rom_flush_regs.yaml
+  - rom_boot_table/rom_boot_table.yaml

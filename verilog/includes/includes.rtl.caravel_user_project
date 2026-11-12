@@ -1,0 +1,4 @@
+# RTL simulation. The programmed model defines both CF_ROM_SYNC and the core.
+-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
+-v $(USER_PROJECT_VERILOG)/rtl/rom_ctrl.v
+-v $(USER_PROJECT_VERILOG)/../build/CF_ROM_SYNC_sim.v

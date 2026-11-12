@@ -1,0 +1,47 @@
+{
+    "DESIGN_NAME": "rom_ctrl",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/rom_ctrl.v"
+    ],
+    "VERILOG_POWER_DEFINE": "USE_POWER_PINS",
+    "CLOCK_PERIOD": 25,
+    "CLOCK_PORT": "wb_clk_i",
+    "FP_SIZING": "absolute",
+    "//": "Hold repair adds about 850 buffers on the Wishbone inputs. At 300 x 200 the cells reached 67% utilization on met1-met3, the router detoured nets to 2-4x their placement length, and max_ss slew hit 1.66 ns. 400 x 200 brings utilization near 50%.",
+    "DIE_AREA": [0, 0, 400, 200],
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "PNR_SDC_FILE": "dir::base.sdc",
+    "SIGNOFF_SDC_FILE": "dir::base.sdc",
+    "VDD_NETS": ["vccd1"],
+    "GND_NETS": ["vssd1"],
+    "FP_PDN_MULTILAYER": false,
+    "//": "Input ports pick up long wrapper routes. LibreLane places one sky130 diode on each input and ties it to this macro's rails.",
+    "DIODE_ON_PORTS": "in",
+
+    "//": "Stay off met4/met5 so the wrapper keeps a clean routing channel over this 1200x500 footprint. At met5 the macro left ~15 met4 OBS rects and the wrapper's global routing hit GRT-0118.",
+    "RT_MAX_LAYER": "met3",
+
+    "MAX_TRANSITION_CONSTRAINT": 1.0,
+    "//": "Repair runs on estimated nominal-RC parasitics; signoff at max_ss uses max-RC extraction and left 1.21 ns on a 1.0 ns limit with the 20%/10% defaults. A 30% margin makes repair aim at 0.7 ns.",
+    "DESIGN_REPAIR_MAX_SLEW_PCT": 30,
+    "GRT_DESIGN_REPAIR_MAX_SLEW_PCT": 30,
+    "//": "The estimate still missed a nor3b_2 driving buffers 175 um away (1.28 ns at ss after routing). Buffer any wire longer than 150 um.",
+    "DESIGN_REPAIR_MAX_WIRE_LENGTH": 150,
+    "GRT_DESIGN_REPAIR_MAX_WIRE_LENGTH": 150,
+    "//": "Match the wrapper signoff limit. A 16 fanout left a 17-load net that wrapper STA flagged.",
+    "MAX_FANOUT_CONSTRAINT": 10,
+
+    "//": "Wishbone input hold failed by 0.13 ns at the wrapper with the 0.1 ns default. 0.3 ns keeps that slack without the extra hold-delay cells that miss setup after extracted RC.",
+    "PL_RESIZER_HOLD_SLACK_MARGIN": 0.3,
+    "PL_RESIZER_SETUP_SLACK_MARGIN": 0.4,
+    "//": "Post-route repair estimates already clear setup, so a larger margin here does not move the signoff path.",
+    "GRT_RESIZER_HOLD_SLACK_MARGIN": 0.2,
+    "GRT_RESIZER_SETUP_SLACK_MARGIN": 0.2,
+    "RUN_POST_GRT_DESIGN_REPAIR": true,
+    "RUN_POST_GRT_RESIZER_TIMING": true,
+    "MAGIC_DEF_LABELS": false,
+    "RUN_IRDROP_REPORT": false,
+    "meta": {
+        "version": 2
+    }
+}
