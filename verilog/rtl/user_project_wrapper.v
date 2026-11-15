@@ -55,7 +55,14 @@ module user_project_wrapper #(
     wire [8:0] gpio_out;
     wire [8:0] gpio_oeb;
 
-    assign gpio_in = io_in[16:8];
+    // GPIOs 8, 9, 10, and 16 are outputs. The OEB check rejects any device
+    // on io_in of a USER_STD_OUTPUT pad, so those inputs stay open.
+    // gpio_in[6:3] is trigger, SCK, CSn, and MOSI. gpio_in[7] is the
+    // bidirectional MISO pad.
+    assign gpio_in[2:0] = 3'b000;
+    assign gpio_in[6:3] = io_in[14:11];
+    assign gpio_in[7] = io_in[15];
+    assign gpio_in[8] = 1'b0;
     assign io_out[16:8] = gpio_out;
     assign io_oeb[16:8] = gpio_oeb;
     assign io_out[7:0] = 8'h0;
@@ -140,8 +147,20 @@ module user_project_wrapper #(
         .OE(rom_oe)
     );
 
-    wire _unused = &{1'b0, la_data_in, la_oenb, user_clock2,
-                     io_in[7:0], io_in[37:17],
+    // GPIOs 17-37 are inputs with no receiver. A kept diode is the device
+    // the OEB check requires on io_in. Synthesis deletes a bare reduction.
+    genvar gpio_tie_i;
+    generate
+        for (gpio_tie_i = 17; gpio_tie_i < 38; gpio_tie_i = gpio_tie_i + 1) begin : gpio_in_tie
+            /* verilator lint_off PINMISSING */
+            (* keep, dont_touch *) sky130_fd_sc_hd__diode_2 u_diode (
+                .DIODE(io_in[gpio_tie_i])
+            );
+            /* verilator lint_on PINMISSING */
+        end
+    endgenerate
+
+    wire _unused = &{1'b0, la_data_in, la_oenb, user_clock2, io_in[7:0],
                      rom_do_ld0, rom_do_ld1, rom_do_ld2, rom_do_ld3};
 endmodule
 
