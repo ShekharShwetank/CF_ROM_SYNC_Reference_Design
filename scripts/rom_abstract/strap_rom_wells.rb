@@ -1,5 +1,13 @@
-# Add the wrap-level well straps and the core vpb/vnb labels to a CF_ROM_SYNC
-# GDS. Magic names ports from text, and the catalog GDS has vpwr/vgnd text but
+# CF_ROM_SYNC 0.2.5 LVS fix. Precheck run 15_NOV_2026___21_59_29 failed only
+# LVS (stat 1). Netgen: CF_ROM_SYNC has 26 layout nets and 24 schematic nets.
+# The schematic ties core vpb to vpwr and vnb to vgnd. The extracted abstract
+# has neither port, so netgen inserts proxyvpb and proxyvnb. The well-pin
+# rectangles in the 0.2.5 leaf are the same as the core LEF, and vpb still
+# abuts the west met2 address rail. This script adds the labels and pin
+# purpose, opens 140 nm between that rail and vpb, and straps the pins to the
+# wrap rails. It does not touch the 6.9 µm DO/A stems. Idempotent.
+#
+# Magic names ports from text, and the catalog GDS has vpwr/vgnd text but
 # not vpb/vnb. The schematic ties vpb to vpwr and vnb to vgnd.
 #
 # Coordinates are the wrap GDS database (1 nm). The core sits at (15000, 15000).

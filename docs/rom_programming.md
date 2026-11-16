@@ -34,4 +34,4 @@ Submit `submit/CF_ROM_SYNC.rom` and the printed SHA-256 with the tapeout. The pu
 
 Simulation include lists compile the sim file and not also the zero behavioural model, because both define `CF_ROM_SYNC_core`.
 
-LVS compares the wrap hierarchy against the abstract layout. It does not check the programmed bytes.
+LVS compares the wrap hierarchy against the abstract layout. It does not check the programmed bytes. On 0.2.5 that compare also requires the well pins to be tied inside the wrap; the failure and the edit are in [ip_issues.md](ip_issues.md).

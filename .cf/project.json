@@ -43,64 +43,64 @@
   },
   "precheck": {
     "version": "1.3.7",
-    "timestamp": "2026-11-15T20:46:47.117802+00:00",
+    "timestamp": "2026-11-16T00:38:02.164010+00:00",
     "pdk": "sky130A",
     "passed": true,
     "checks": {
       "topcell_check": {
         "status": "pass",
-        "duration_s": 4.17
+        "duration_s": 4.83
       },
       "gpio_defines": {
         "status": "pass",
-        "duration_s": 0.62
+        "duration_s": 0.66
       },
       "xor": {
         "status": "pass",
-        "duration_s": 21.95
+        "duration_s": 22.05
       },
       "klayout_feol": {
         "status": "pass",
-        "duration_s": 495.76
+        "duration_s": 551.46
       },
       "klayout_beol": {
         "status": "pass",
-        "duration_s": 1301.25
+        "duration_s": 1338.55
       },
       "klayout_offgrid": {
         "status": "pass",
-        "duration_s": 333.49
+        "duration_s": 341.14
       },
       "klayout_met_min_ca_density": {
         "status": "pass",
-        "duration_s": 91.17
+        "duration_s": 69.22
       },
       "klayout_pin_label_purposes_overlapping_drawing": {
         "status": "pass",
-        "duration_s": 68.1
+        "duration_s": 48.15
       },
       "klayout_zeroarea": {
         "status": "pass",
-        "duration_s": 13.39
+        "duration_s": 9.82
       },
       "spike_check": {
         "status": "pass",
-        "duration_s": 9.1
+        "duration_s": 6.58
       },
       "illegal_cellname_check": {
         "status": "pass",
-        "duration_s": 6.49
+        "duration_s": 4.39
       },
       "lvs": {
         "status": "pass",
-        "duration_s": 930.05
+        "duration_s": 727.85
       },
       "oeb": {
         "status": "pass",
-        "duration_s": 11.87,
+        "duration_s": 8.51,
         "details": "0 errors, 0 warnings across 38 GPIOs",
         "report": {
-          "report_relpath": "/home/shekhar/Desktop/work/sixa-cf/workspace/CF_ROM_SYNC_Reference_Design/precheck_results/15_NOV_2026___19_51_58/outputs/reports/cvc.oeb.report",
+          "report_relpath": "/home/shekhar/Desktop/work/sixa-cf/workspace/CF_ROM_SYNC_Reference_Design/precheck_results/15_NOV_2026___23_45_45/outputs/reports/cvc.oeb.report",
           "design_type": "caravel",
           "gpios": [
             {
@@ -689,6 +689,6 @@
         "reason": "optional (use --magic-drc to include)"
       }
     },
-    "input_file_hash": "2cbfda3d60bcb697300d6da085d8abd1357e47b9"
+    "input_file_hash": "632ce1c82cd926b997b30c328700842d00564ebd"
   }
 }
