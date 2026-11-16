@@ -49,7 +49,7 @@
                 "dir::../../ip/CF_ROM_SYNC/layout/gds/CF_ROM_SYNC.gds"
             ],
             "lef": [
-                "dir::CF_ROM_SYNC.lef"
+                "dir::../../ip/CF_ROM_SYNC/layout/lef/CF_ROM_SYNC.lef"
             ],
             "instances": {
                 "u_cf_rom_sync": {
@@ -98,7 +98,7 @@
     "ERROR_ON_XOR_ERROR": false,
     "MAGIC_EXT_USE_GDS": false,
     "MAGIC_EXT_ABSTRACT_CELLS": [
-        "^CF_ROM_SYNC_core$"
+        "^([A-Z]{2}_)?CF_ROM_SYNC_core$"
     ],
 
     "DRT_THREADS": 1,

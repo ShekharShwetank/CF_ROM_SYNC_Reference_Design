@@ -1,6 +1,6 @@
 # CF_ROM_SYNC reference design
 
-A Caravel user project whose only catalog IP is `CF_ROM_SYNC` 0.2.3. The management RISC-V core is the CPU. The management UART is the console. Serial readout is custom RTL in `rom_ctrl`, so the ROM stays the block under study.
+A Caravel user project whose only catalog IP is `CF_ROM_SYNC` 0.2.5. The management RISC-V core is the CPU. The management UART is the console. Serial readout is custom RTL in `rom_ctrl`, so the ROM stays the block under study.
 
 The public ROM GDS is an abstract. ChipFoundry substitutes the programmed leaf at tapeout. This repository shows how to build that image, how to read it, and how to place the macro.
 
@@ -69,9 +69,7 @@ The suites are listed in [docs/verification.md](docs/verification.md).
 
 `u_cf_rom_sync` starts at (130, 320) µm, 60 µm above the controller. The wrapper's met5 straps over it are `vccd1` at y = 374.3 µm and `vssd1` at y = 392.9 µm. Both must cross the 90.42 µm macro, or the ROM's `vgnd` or `vpwr` met4 pins are left unconnected; at y = 300 the `vssd1` strap missed. Power hooks are `vpwr`/`vgnd` on the ROM and `vccd1`/`vssd1` on `rom_ctrl`, both tied to the user core rails.
 
-Place and route does not use `ip/CF_ROM_SYNC/layout/lef/CF_ROM_SYNC.lef`. That LEF leaves the array open and blocks the met1 approach to `DO`. `scripts/rom_abstract/make_rom_lef.py` writes `openlane/user_project_wrapper/CF_ROM_SYNC.lef` from the wrap LEF and the core LEF. The core obstruction is shifted by (+15, +15), and a met1 corridor 0.28 µm wider than each `DO` pin on both sides is opened from the macro edge to the pin top. 0.28 µm is the sky130 met1 spacing to wide metal, which applies to this LEF's obstructions. A narrower corridor gives `DRT-0073 No access point`. `A` is reached by a via2 from met3. The defect report is [docs/ip_issues.md](docs/ip_issues.md). When ChipFoundry ships a fixed LEF, point the wrapper config back at the IP file.
-
-`make rom-lef` regenerates that LEF, checks the corridors on the IP GDS, and routes all 22 ROM pins in a one-macro design with the LibreLane image's OpenROAD. It fails on any pin-access error, routing DRC, or routed metal on the core array. It takes a few seconds; run it before a wrapper harden whenever the generator or the IP changes.
+This branch uses the 0.2.5 catalog LEF and GDS at `ip/CF_ROM_SYNC/layout/`. `DO` and `A` reach the halo edge. The LEF port is the outer 6.9 µm of each stem, and the rest of the stem is obstruction. Do not run `make rom-lef` before this harden. That target rebuilds `openlane/user_project_wrapper/CF_ROM_SYNC.lef`, which the wrapper config no longer reads. The 0.2.3 abstract note is [docs/ip_issues.md](docs/ip_issues.md).
 
 The ss liberty is characterized at −40 °C, not 100 °C. The slow corner still uses that file. That gap is in the same note.
 
@@ -106,7 +104,7 @@ Run these from this directory after `source /home/shekhar/Desktop/work/.work_env
 
 **B5. Harden the wrapper**
 
-`make rom-lef` first. Then `cf harden user_project_wrapper`. Gate: the flow finishes with no deferred errors and saves its own views. In the run directory, LVS is clean, KLayout DRC is 0, XOR is clean, and setup and hold are at or above 0 at all 9 corners. `*-openroad-stapostpnr/*/checks.rpt` has no max slew or max cap violators, and no max fanout violators on data nets. Clock-tree leaf buffers (`clkbuf_leaf_*`) drive more than 10 loads by design, so they are not counted. LibreLane only warns on these, so this check is manual. The power-grid step must not report `PSM-0039 Unconnected instance` for `u_cf_rom_sync` or `u_rom_ctrl`.
+`cf harden user_project_wrapper`. Do not run `make rom-lef` first. Gate: the flow finishes with no deferred errors and saves its own views. In the run directory, LVS is clean, KLayout DRC is 0, XOR is clean, and setup and hold are at or above 0 at all 9 corners. `*-openroad-stapostpnr/*/checks.rpt` has no max slew or max cap violators, and no max fanout violators on data nets. Clock-tree leaf buffers (`clkbuf_leaf_*`) drive more than 10 loads by design, so they are not counted. LibreLane only warns on these, so this check is manual. The power-grid step must not report `PSM-0039 Unconnected instance` for `u_cf_rom_sync` or `u_rom_ctrl`.
 
 Then:
 
@@ -123,7 +121,7 @@ Keepout must report 0 intrusions. `make rom-sta` must report positive slack on e
 
 **B7. Precheck**
 
-`cf precheck`. Gate: the required checks pass, including LVS against `lvs/user_project_wrapper/lvs_config.json`, XOR, consistency, and the GPIO-defaults checks.
+`cf precheck`. Gate: the required checks pass, including LVS against `lvs/user_project_wrapper/lvs_config.json`, XOR, consistency, and the GPIO-defaults checks. Catalog 0.2.5 fails that LVS until the well straps in [docs/ip_issues.md](docs/ip_issues.md) are in the GDS the harden copies. Magic's `GS_` (or any other two-letter) prefix on `CF_ROM_SYNC_core` stays in the wrapper GDS.
 
 If a gate fails, the report to send back is the one named in that step: the run's `checks.rpt` / `min.rpt` / `max.rpt`, the keepout log, or `build/rom_sta/<corner>.rpt`.
 

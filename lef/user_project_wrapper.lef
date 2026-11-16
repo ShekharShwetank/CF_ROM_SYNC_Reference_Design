@@ -250,7 +250,6 @@ MACRO user_project_wrapper
   PIN io_in[10]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.247500 ;
     PORT
       LAYER met3 ;
         RECT 2917.600 2289.980 2924.800 2291.180 ;
@@ -304,7 +303,6 @@ MACRO user_project_wrapper
   PIN io_in[16]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met2 ;
         RECT 2473.830 3517.600 2474.390 3524.800 ;
@@ -313,6 +311,7 @@ MACRO user_project_wrapper
   PIN io_in[17]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met2 ;
         RECT 2149.070 3517.600 2149.630 3524.800 ;
@@ -321,6 +320,7 @@ MACRO user_project_wrapper
   PIN io_in[18]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met2 ;
         RECT 1824.770 3517.600 1825.330 3524.800 ;
@@ -329,6 +329,7 @@ MACRO user_project_wrapper
   PIN io_in[19]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met2 ;
         RECT 1500.470 3517.600 1501.030 3524.800 ;
@@ -345,6 +346,7 @@ MACRO user_project_wrapper
   PIN io_in[20]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met2 ;
         RECT 1175.710 3517.600 1176.270 3524.800 ;
@@ -353,6 +355,7 @@ MACRO user_project_wrapper
   PIN io_in[21]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met2 ;
         RECT 851.410 3517.600 851.970 3524.800 ;
@@ -361,6 +364,7 @@ MACRO user_project_wrapper
   PIN io_in[22]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met2 ;
         RECT 527.110 3517.600 527.670 3524.800 ;
@@ -369,6 +373,7 @@ MACRO user_project_wrapper
   PIN io_in[23]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met2 ;
         RECT 202.350 3517.600 202.910 3524.800 ;
@@ -377,6 +382,7 @@ MACRO user_project_wrapper
   PIN io_in[24]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 3420.820 2.400 3422.020 ;
@@ -385,6 +391,7 @@ MACRO user_project_wrapper
   PIN io_in[25]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 3159.700 2.400 3160.900 ;
@@ -393,6 +400,7 @@ MACRO user_project_wrapper
   PIN io_in[26]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 2899.260 2.400 2900.460 ;
@@ -401,6 +409,7 @@ MACRO user_project_wrapper
   PIN io_in[27]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 2638.820 2.400 2640.020 ;
@@ -409,6 +418,7 @@ MACRO user_project_wrapper
   PIN io_in[28]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 2377.700 2.400 2378.900 ;
@@ -417,6 +427,7 @@ MACRO user_project_wrapper
   PIN io_in[29]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 2117.260 2.400 2118.460 ;
@@ -433,6 +444,7 @@ MACRO user_project_wrapper
   PIN io_in[30]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 1856.140 2.400 1857.340 ;
@@ -441,6 +453,7 @@ MACRO user_project_wrapper
   PIN io_in[31]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 1595.700 2.400 1596.900 ;
@@ -449,6 +462,7 @@ MACRO user_project_wrapper
   PIN io_in[32]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 1335.260 2.400 1336.460 ;
@@ -457,6 +471,7 @@ MACRO user_project_wrapper
   PIN io_in[33]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 1074.140 2.400 1075.340 ;
@@ -465,6 +480,7 @@ MACRO user_project_wrapper
   PIN io_in[34]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 813.700 2.400 814.900 ;
@@ -473,6 +489,7 @@ MACRO user_project_wrapper
   PIN io_in[35]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 552.580 2.400 553.780 ;
@@ -481,6 +498,7 @@ MACRO user_project_wrapper
   PIN io_in[36]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 357.420 2.400 358.620 ;
@@ -489,6 +507,7 @@ MACRO user_project_wrapper
   PIN io_in[37]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
         RECT -4.800 161.580 2.400 162.780 ;
@@ -537,7 +556,6 @@ MACRO user_project_wrapper
   PIN io_in[8]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.495000 ;
     PORT
       LAYER met3 ;
         RECT 2917.600 1758.900 2924.800 1760.100 ;
@@ -546,7 +564,6 @@ MACRO user_project_wrapper
   PIN io_in[9]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.247500 ;
     PORT
       LAYER met3 ;
         RECT 2917.600 2024.100 2924.800 2025.300 ;

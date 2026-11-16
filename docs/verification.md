@@ -44,4 +44,4 @@ The wrapper is synthesized. Hold between `rom_ctrl` and the ROM is closed by the
 
 ## What a passing LVS does not prove
 
-LVS shows that `CF_ROM_SYNC` is connected and that `vpb`/`vnb` stay inside the wrap. The mask image is the SHA-256 of `submit/CF_ROM_SYNC.rom`.
+A passing LVS shows that `CF_ROM_SYNC` is connected and that `vpb` is on `vpwr` and `vnb` is on `vgnd` inside the wrap. Catalog 0.2.5 does not draw that tie. Precheck run `15_NOV_2026___21_59_29` failed only there: 26 layout nets against 24 schematic nets, with `proxyvpb` and `proxyvnb`. The record and the GDS edit are in [ip_issues.md](ip_issues.md). The mask image is the SHA-256 of `submit/CF_ROM_SYNC.rom`.

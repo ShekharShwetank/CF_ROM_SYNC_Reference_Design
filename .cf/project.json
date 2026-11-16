@@ -43,65 +43,64 @@
   },
   "precheck": {
     "version": "1.3.7",
-    "timestamp": "2026-11-11T13:06:11.915099+00:00",
+    "timestamp": "2026-11-16T00:38:02.164010+00:00",
     "pdk": "sky130A",
-    "passed": false,
+    "passed": true,
     "checks": {
       "topcell_check": {
         "status": "pass",
-        "duration_s": 4.85
+        "duration_s": 4.83
       },
       "gpio_defines": {
         "status": "pass",
-        "duration_s": 0.65
+        "duration_s": 0.66
       },
       "xor": {
         "status": "pass",
-        "duration_s": 20.62
+        "duration_s": 22.05
       },
       "klayout_feol": {
         "status": "pass",
-        "duration_s": 488.87
+        "duration_s": 551.46
       },
       "klayout_beol": {
         "status": "pass",
-        "duration_s": 1176.49
+        "duration_s": 1338.55
       },
       "klayout_offgrid": {
         "status": "pass",
-        "duration_s": 299.32
+        "duration_s": 341.14
       },
       "klayout_met_min_ca_density": {
         "status": "pass",
-        "duration_s": 79.75
+        "duration_s": 69.22
       },
       "klayout_pin_label_purposes_overlapping_drawing": {
         "status": "pass",
-        "duration_s": 63.31
+        "duration_s": 48.15
       },
       "klayout_zeroarea": {
         "status": "pass",
-        "duration_s": 12.91
+        "duration_s": 9.82
       },
       "spike_check": {
         "status": "pass",
-        "duration_s": 8.52
+        "duration_s": 6.58
       },
       "illegal_cellname_check": {
         "status": "pass",
-        "duration_s": 6.17
+        "duration_s": 4.39
       },
       "lvs": {
-        "status": "fail",
-        "duration_s": 925.0,
-        "details": "LVS FAILED (stat=1), see /home/shekhar/Desktop/work/sixa-cf/workspace/CF_ROM_SYNC_Reference_Design/precheck_results/11_NOV_2026___12_14_14/logs/LVS_check.log"
+        "status": "pass",
+        "duration_s": 727.85
       },
       "oeb": {
-        "status": "fail",
-        "duration_s": 11.51,
-        "details": "4 errors, 21 warnings across 38 GPIOs",
+        "status": "pass",
+        "duration_s": 8.51,
+        "details": "0 errors, 0 warnings across 38 GPIOs",
         "report": {
-          "report_relpath": "/home/shekhar/Desktop/work/sixa-cf/workspace/CF_ROM_SYNC_Reference_Design/precheck_results/11_NOV_2026___12_14_14/outputs/reports/cvc.oeb.report",
+          "report_relpath": "/home/shekhar/Desktop/work/sixa-cf/workspace/CF_ROM_SYNC_Reference_Design/precheck_results/15_NOV_2026___23_45_45/outputs/reports/cvc.oeb.report",
           "design_type": "caravel",
           "gpios": [
             {
@@ -228,7 +227,7 @@
               "gpio": 8,
               "user_index": 8,
               "analog_index": 1,
-              "in": 4,
+              "in": null,
               "out": "2",
               "analog": null,
               "oeb_min": "vssd*",
@@ -237,13 +236,13 @@
               "configuration": "USER_STD_OUTPUT",
               "resolved_mode": "USER_STD_OUTPUT",
               "warning_count": 0,
-              "error_count": 1
+              "error_count": 0
             },
             {
               "gpio": 9,
               "user_index": 9,
               "analog_index": 2,
-              "in": 4,
+              "in": null,
               "out": "2",
               "analog": null,
               "oeb_min": "vssd*",
@@ -252,13 +251,13 @@
               "configuration": "USER_STD_OUTPUT",
               "resolved_mode": "USER_STD_OUTPUT",
               "warning_count": 0,
-              "error_count": 1
+              "error_count": 0
             },
             {
               "gpio": 10,
               "user_index": 10,
               "analog_index": 3,
-              "in": 4,
+              "in": null,
               "out": "2",
               "analog": null,
               "oeb_min": "vssd*",
@@ -267,7 +266,7 @@
               "configuration": "USER_STD_OUTPUT",
               "resolved_mode": "USER_STD_OUTPUT",
               "warning_count": 0,
-              "error_count": 1
+              "error_count": 0
             },
             {
               "gpio": 11,
@@ -348,7 +347,7 @@
               "gpio": 16,
               "user_index": 16,
               "analog_index": 9,
-              "in": 4,
+              "in": null,
               "out": "2",
               "analog": null,
               "oeb_min": "vssd*",
@@ -357,13 +356,13 @@
               "configuration": "USER_STD_OUTPUT",
               "resolved_mode": "USER_STD_OUTPUT",
               "warning_count": 0,
-              "error_count": 1
+              "error_count": 0
             },
             {
               "gpio": 17,
               "user_index": 17,
               "analog_index": 10,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -371,14 +370,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 18,
               "user_index": 18,
               "analog_index": 11,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -386,14 +385,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 19,
               "user_index": 19,
               "analog_index": 12,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -401,14 +400,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 20,
               "user_index": 20,
               "analog_index": 13,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -416,14 +415,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 21,
               "user_index": 21,
               "analog_index": 14,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -431,14 +430,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 22,
               "user_index": 22,
               "analog_index": 15,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -446,14 +445,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 23,
               "user_index": 23,
               "analog_index": 16,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -461,14 +460,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 24,
               "user_index": 24,
               "analog_index": 17,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -476,14 +475,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 25,
               "user_index": 25,
               "analog_index": 18,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -491,14 +490,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 26,
               "user_index": 26,
               "analog_index": 19,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -506,14 +505,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 27,
               "user_index": 27,
               "analog_index": 20,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -521,14 +520,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 28,
               "user_index": 28,
               "analog_index": 21,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -536,14 +535,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 29,
               "user_index": 29,
               "analog_index": 22,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -551,14 +550,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 30,
               "user_index": 30,
               "analog_index": 23,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -566,14 +565,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 31,
               "user_index": 31,
               "analog_index": 24,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -581,14 +580,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 32,
               "user_index": 32,
               "analog_index": 25,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -596,14 +595,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 33,
               "user_index": 33,
               "analog_index": 26,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -611,14 +610,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 34,
               "user_index": 34,
               "analog_index": 27,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -626,14 +625,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 35,
               "user_index": 35,
               "analog_index": 28,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -641,14 +640,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 36,
               "user_index": 36,
               "analog_index": null,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -656,14 +655,14 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             },
             {
               "gpio": 37,
               "user_index": 37,
               "analog_index": null,
-              "in": null,
+              "in": 4,
               "out": "vssd*",
               "analog": null,
               "oeb_min": "vccd*",
@@ -671,142 +670,16 @@
               "oeb_max": "vccd*",
               "configuration": "USER_STD_INPUT_NOPULL",
               "resolved_mode": "USER_STD_INPUT_NOPULL",
-              "warning_count": 1,
+              "warning_count": 0,
               "error_count": 0
             }
           ],
-          "messages": [
-            {
-              "gpio": 8,
-              "severity": "error",
-              "text": "user input connection to user output gpio - undriven"
-            },
-            {
-              "gpio": 9,
-              "severity": "error",
-              "text": "user input connection to user output gpio - undriven"
-            },
-            {
-              "gpio": 10,
-              "severity": "error",
-              "text": "user input connection to user output gpio - undriven"
-            },
-            {
-              "gpio": 16,
-              "severity": "error",
-              "text": "user input connection to user output gpio - undriven"
-            },
-            {
-              "gpio": 17,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 18,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 19,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 20,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 21,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 22,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 23,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 24,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 25,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 26,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 27,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 28,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 29,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 30,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 31,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 32,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 33,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 34,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 35,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 36,
-              "severity": "warning",
-              "text": "missing user input connection"
-            },
-            {
-              "gpio": 37,
-              "severity": "warning",
-              "text": "missing user input connection"
-            }
-          ],
+          "messages": [],
           "summary": {
             "total": 38,
-            "errors": 4,
-            "warnings": 21,
-            "no_issues_banner": false
+            "errors": 0,
+            "warnings": 0,
+            "no_issues_banner": true
           }
         }
       },
@@ -816,6 +689,6 @@
         "reason": "optional (use --magic-drc to include)"
       }
     },
-    "input_file_hash": "82c50ef91b37c330b8aabbb7048b5d287b52d7d3"
+    "input_file_hash": "632ce1c82cd926b997b30c328700842d00564ebd"
   }
 }
